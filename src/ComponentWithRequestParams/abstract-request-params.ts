@@ -1,7 +1,6 @@
-import { Subject, Observable, MonoTypeOperatorFunction } from 'rxjs';
-import { RequestParams } from './request-params';
+import { Subject, Observable } from 'rxjs';
 
-export abstract class AbstractRequestParams<T extends RequestParams> {
+export abstract class AbstractRequestParams<T> {
     /**
      * Global record of this request params values.
      *
