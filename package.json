@@ -2,9 +2,10 @@
   "name": "slant-utils",
   "version": "1.4.0",
   "description": "Utilities in Typescript for Angular",
-  "main": "index.ts",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "tsc": "tsc"
+    "build": "tsc"
   },
   "keywords": [
     "angular",
