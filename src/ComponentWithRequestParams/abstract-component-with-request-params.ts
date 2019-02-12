@@ -65,4 +65,12 @@ export abstract class AbstractComponentWithRequestParams {
    * @memberof AbstractComponentWithRequestParams
    */
   public abstract getRegisteredRequestParams<T>(concreteRequestParams: new () => T): AbstractRequestParams<any>;
+
+  /**
+   * Reset the global params;
+   *
+   * @abstract
+   * @memberof AbstractComponentWithRequestParams
+   */
+  public abstract clearGlobalParams(): void;
 }
