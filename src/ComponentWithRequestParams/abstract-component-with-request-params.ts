@@ -1,6 +1,6 @@
-import { AbstractRequestParams } from './abstract-request-params';
 import { Observer } from 'rxjs';
-import { RequestParams } from './request-params';
+import { AbstractRequestParams } from './abstract-request-params';
+import { IRequestParams } from './request-params';
 
 export abstract class AbstractComponentWithRequestParams {
   /**
@@ -11,7 +11,7 @@ export abstract class AbstractComponentWithRequestParams {
    * @type {GlobalParams}
    * @memberof AbstractComponentWithRequestParams
    */
-  abstract globalParams: RequestParams;
+  public abstract globalParams: IRequestParams;
 
   /**
    * Global record of the request params for this component.
@@ -23,7 +23,7 @@ export abstract class AbstractComponentWithRequestParams {
    * @type {Array<AbstractRequestParams<any>>}
    * @memberof AbstractComponentWithRequestParams
    */
-  abstract requestParams: Array<AbstractRequestParams<any>>;
+  public abstract requestParams: Array<AbstractRequestParams<any>>;
 
   /**
    * Observer to be used to subscribe to each request param.
@@ -33,7 +33,7 @@ export abstract class AbstractComponentWithRequestParams {
    * @type {Observer<RequestParams>}
    * @memberof AbstractComponentWithRequestParams
    */
-  abstract paramsObserver: Observer<RequestParams>;
+  public abstract paramsObserver: Observer<IRequestParams>;
 
   /**
    * Iterate through `requestParams` and attach an observer by subscribing to each `AbstractRequestParam<T>`.
@@ -42,7 +42,7 @@ export abstract class AbstractComponentWithRequestParams {
    * @param {Observer<RequestParams>} observer
    * @memberof AbstractComponentWithRequestParams
    */
-  abstract subscribeToRegisteredParams(observer: Observer<RequestParams>): void;
+  public abstract subscribeToRegisteredParams(observer: Observer<IRequestParams>): void;
 
   /**
    * Add an `AbstractRequestParam<T>` to the global list of params `requestParams`.
@@ -51,7 +51,7 @@ export abstract class AbstractComponentWithRequestParams {
    * @param {Array<AbstractRequestParams<any>>} requestParams
    * @memberof AbstractComponentWithRequestParams
    */
-  abstract registerRequestParams(requestParamsForRegistering: Array<AbstractRequestParams<any>>): void;
+  public abstract registerRequestParams(requestParamsForRegistering: Array<AbstractRequestParams<any>>): void;
 
   /**
    * Find the concrete request params in the list of registered request params and return it.
@@ -64,5 +64,5 @@ export abstract class AbstractComponentWithRequestParams {
    * @returns {AbstractRequestParams<any>}
    * @memberof AbstractComponentWithRequestParams
    */
-  abstract getRegisteredRequestParams<T>(concreteRequestParams: (new () => T)): AbstractRequestParams<any>;
+  public abstract getRegisteredRequestParams<T>(concreteRequestParams: new () => T): AbstractRequestParams<any>;
 }

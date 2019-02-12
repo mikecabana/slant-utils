@@ -1,4 +1,4 @@
-import { Subject, Observable } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 
 export abstract class AbstractRequestParams<T> {
   /**
@@ -8,7 +8,7 @@ export abstract class AbstractRequestParams<T> {
    * @type {T}
    * @memberof AbstractRequestParams
    */
-  abstract params: T;
+  public abstract params: T;
 
   /**
    * Global subject to emit this request params values.
@@ -17,7 +17,7 @@ export abstract class AbstractRequestParams<T> {
    * @type {Subject<T>}
    * @memberof AbstractRequestParams
    */
-  abstract subject: Subject<T>;
+  public abstract subject: Subject<T>;
 
   /**
    * Get this request params Subject as an Observable by using the `pipe` operator.
@@ -27,5 +27,5 @@ export abstract class AbstractRequestParams<T> {
    * @returns {Observable<T>}
    * @memberof AbstractRequestParams
    */
-  abstract getPipedParamsObservable(): Observable<T>;
+  public abstract getPipedParamsObservable(): Observable<T>;
 }

@@ -1,1 +1,3 @@
-export type RequestParams = { [name: string]: string };
+export interface IRequestParams {
+  [name: string]: string;
+}
