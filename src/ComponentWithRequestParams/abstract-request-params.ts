@@ -22,7 +22,7 @@ export abstract class AbstractRequestParams<T extends RequestParams> {
 
     /**
      * Get this request params Subject as an Observable by using the `pipe` operator.
-     * The `pipe` operator will allow us to apply `MonoTypeOperatorFunction` to the Observable i.e. `distinctUntilChanged()`.
+     * The `pipe` operator will allow us to apply Operator Functions to the Observable i.e. `distinctUntilChanged()`.
      *
      * @abstract
      * @returns {Observable<T>}
