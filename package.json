@@ -2,10 +2,17 @@
   "name": "slant-utils",
   "version": "1.4.0",
   "description": "Utilities in Typescript for Angular",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepare" : "npm run build",
+    "prepublishOnly" : "npm run lint",
+    "preversion" : "npm run lint",
+    "version" : "npm run format && git add -A src",
+    "postversion" : "git push && git push --tags"
   },
   "keywords": [
     "angular",
@@ -20,11 +27,13 @@
     "url": "https://github.com/mikecabana/slant-utils.git"
   },
   "devDependencies": {
+    "prettier": "^1.16.4",
     "rxjs": "^6.4.0",
+    "tslint": "^5.12.1",
+    "tslint-config-prettier": "^1.18.0",
     "typescript": "^3.3.3"
   },
-  "peerDependencies": {
-    "rxjs": "^6.4.0",
-    "typescript": "^3.3.3"
-  }
+  "files": [
+    "lib/**/*"
+  ]
 }
