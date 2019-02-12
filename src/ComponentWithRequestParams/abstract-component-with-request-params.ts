@@ -60,9 +60,9 @@ export abstract class AbstractComponentWithRequestParams {
    *
    * @abstract
    * @template T
-   * @param {() => T} concreteRequestParams
+   * @param {(new () => T)} concreteRequestParams
    * @returns {AbstractRequestParams<any>}
    * @memberof AbstractComponentWithRequestParams
    */
-  abstract getRegisteredRequestParams<T>(concreteRequestParams: () => T): AbstractRequestParams<any>;
+  abstract getRegisteredRequestParams<T>(concreteRequestParams: (new () => T)): AbstractRequestParams<any>;
 }
