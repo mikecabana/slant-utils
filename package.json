@@ -15,8 +15,8 @@
   "author": "Michael Cabana <mikeycabana@gmail.com> (https://mikecabana.com/)",
   "license": "MIT",
   "repository": {
-      "type": "git",
-      "url": "https://github.com/mikecabana/slant-utils.git"
+    "type": "git",
+    "url": "https://github.com/mikecabana/slant-utils.git"
   },
   "dependencies": {
     "rxjs": "^6.4.0",
