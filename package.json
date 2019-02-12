@@ -18,6 +18,10 @@
     "type": "git",
     "url": "https://github.com/mikecabana/slant-utils.git"
   },
+  "devDependencies": {
+    "rxjs": "^6.4.0",
+    "typescript": "^3.3.3"
+  },
   "peerDependencies": {
     "rxjs": "^6.4.0",
     "typescript": "^3.3.3"
