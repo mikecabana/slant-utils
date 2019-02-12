@@ -28,4 +28,12 @@ export abstract class AbstractRequestParams<T> {
    * @memberof AbstractRequestParams
    */
   public abstract getPipedParamsObservable(): Observable<T>;
+
+  /**
+   * Reset the params.
+   *
+   * @abstract
+   * @memberof AbstractRequestParams
+   */
+  public abstract resetParams(): void;
 }
