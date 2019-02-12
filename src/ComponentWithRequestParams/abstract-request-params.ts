@@ -25,9 +25,8 @@ export abstract class AbstractRequestParams<T extends RequestParams> {
      * The `pipe` operator will allow us to apply `MonoTypeOperatorFunction` to the Observable i.e. `distinctUntilChanged()`.
      *
      * @abstract
-     * @param {Array<MonoTypeOperatorFunction<T>>} operatorFns
      * @returns {Observable<T>}
      * @memberof AbstractRequestParams
      */
-    abstract getPipedParamsObservable(operatorFns: Array<MonoTypeOperatorFunction<T>>): Observable<T>;
+    abstract getPipedParamsObservable(): Observable<T>;
 }

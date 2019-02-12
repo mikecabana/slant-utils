@@ -5,7 +5,7 @@ import { RequestParams } from './request-params';
 export abstract class AbstractComponentWithRequestParams {
     /**
      * Global record of the combined request params.
-     * This is what should get passed to Angulars HttpParams.
+     * This is what should get passed to Angular's HttpParams.
      *
      * @abstract
      * @type {GlobalParams}
@@ -26,6 +26,16 @@ export abstract class AbstractComponentWithRequestParams {
     abstract requestParams: Array<AbstractRequestParams<any>>;
 
     /**
+     * Observer to be used to subscribe to each request param.
+     * Use as the argument for `subscribeToRegisteredParams(observer: Observer<RequestParams>)`
+     *
+     * @abstract
+     * @type {Observer<RequestParams>}
+     * @memberof AbstractComponentWithRequestParams
+     */
+    abstract paramsObserver: Observer<RequestParams>;
+
+    /**
      * Iterate through `requestParams` and attach an observer by subscribing to each `AbstractRequestParam<T>`.
      *
      * @abstract
@@ -41,5 +51,5 @@ export abstract class AbstractComponentWithRequestParams {
      * @param {Array<AbstractRequestParams<any>>} requestParams
      * @memberof AbstractComponentWithRequestParams
      */
-    abstract registerRequestParams(requestParams: Array<AbstractRequestParams<any>>): void
+    abstract registerRequestParams(requestParamsForRegistering: Array<AbstractRequestParams<any>>): void;
 }
