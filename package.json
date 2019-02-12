@@ -1,0 +1,21 @@
+{
+  "name": "slant",
+  "version": "0.0.1",
+  "description": "Utilities in typescript for Angular",
+  "main": "index.ts",
+  "scripts": {
+    "tsc": "tsc"
+  },
+  "keywords": [
+    "angular",
+    "angular2+",
+    "typescript",
+    "utilities"
+  ],
+  "author": "Michael Cabana <mikeycabana@gmail.com> (https://mikecabana.com/)",
+  "license": "MIT",
+  "dependencies": {
+    "rxjs": "^6.4.0",
+    "typescript": "^3.3.3"
+  }
+}
