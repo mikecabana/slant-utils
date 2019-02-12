@@ -52,4 +52,18 @@ export abstract class AbstractComponentWithRequestParams {
      * @memberof AbstractComponentWithRequestParams
      */
     abstract registerRequestParams(requestParamsForRegistering: Array<AbstractRequestParams<any>>): void;
+
+    
+    /**
+     * Find the concrete request params in the list of registered request params and return it.
+     * Pass a `new ` instance to type check and find the right object i.e. `new SortRequestParams()`.
+     * Possible implementation can be `return this.requestParams.filter(requestParam => requestParam instanceof concreteRequestParams)[0];`.
+     * 
+     * @abstract
+     * @template T
+     * @param {() => T} concreteRequestParams
+     * @returns {AbstractRequestParams<any>}
+     * @memberof AbstractComponentWithRequestParams
+     */
+    abstract getRegisteredRequestParams<T>(concreteRequestParams: () => T): AbstractRequestParams<any>;
 }
