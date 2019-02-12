@@ -8,11 +8,11 @@
     "build": "tsc",
     "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
     "lint": "tslint -p tsconfig.json",
-    "prepare" : "npm run build",
-    "prepublishOnly" : "npm run lint",
-    "preversion" : "npm run lint",
-    "version" : "npm run format && git add -A src",
-    "postversion" : "git push && git push --tags"
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
   },
   "keywords": [
     "angular",
@@ -31,6 +31,10 @@
     "rxjs": "^6.4.0",
     "tslint": "^5.12.1",
     "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.3.3"
+  },
+  "peerDependencies": {
+    "rxjs": "^6.4.0",
     "typescript": "^3.3.3"
   },
   "files": [

@@ -1,6 +1,6 @@
-import { AbstractRequestParams } from './abstract-request-params.d';
+import { AbstractRequestParams } from './abstract-request-params';
 import { Observer } from 'rxjs';
-import { RequestParams } from './request-params.d';
+import { RequestParams } from './request-params';
 
 export abstract class AbstractComponentWithRequestParams {
   /**
