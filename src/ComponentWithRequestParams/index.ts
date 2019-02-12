@@ -1,3 +1,3 @@
-export * from './abstract-component-with-request-params';
-export * from './abstract-request-params';
-export * from './request-params';
+export * from './abstract-component-with-request-params.d';
+export * from './abstract-request-params.d';
+export * from './request-params.d';
