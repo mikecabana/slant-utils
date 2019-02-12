@@ -1,5 +1,5 @@
 {
-  "name": "slant",
+  "name": "slant-utils",
   "version": "0.0.1",
   "description": "Utilities in typescript for Angular",
   "main": "index.ts",
