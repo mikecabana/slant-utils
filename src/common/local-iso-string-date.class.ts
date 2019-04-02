@@ -1,4 +1,4 @@
-export class ToLocalIso {
+export class LocalIsoStringDate {
 
     /**
      * Converts the current date into ISO string format with the option of including the timezone offset.
@@ -7,21 +7,21 @@ export class ToLocalIso {
      * @param {Date} date
      * @param {{ includeOffset: boolean }} [options={ includeOffset: false }]
      * @returns {string}
-     * @memberof ToLocalIso
+     * @memberof LocalIsoStringDate
      */
     public static convert(date: Date, options: { includeOffset: boolean } = { includeOffset: false }): string {
-        let localIsoDate = `${ToLocalIso.pad(date.getFullYear())}-${ToLocalIso.pad(date.getMonth() + 1)}-${ToLocalIso.pad(date.getDate())}T${ToLocalIso.pad(date.getHours())}:${ToLocalIso.pad(date.getMinutes())}:${ToLocalIso.pad(date.getSeconds())}.${ToLocalIso.padMillis(date.getMilliseconds())}`;
+        let localIsoDate = `${LocalIsoStringDate.pad(date.getFullYear())}-${LocalIsoStringDate.pad(date.getMonth() + 1)}-${LocalIsoStringDate.pad(date.getDate())}T${LocalIsoStringDate.pad(date.getHours())}:${LocalIsoStringDate.pad(date.getMinutes())}:${LocalIsoStringDate.pad(date.getSeconds())}.${LocalIsoStringDate.padMillis(date.getMilliseconds())}`;
         if (options.includeOffset) {
-            localIsoDate += ToLocalIso.getOffset(date);
+            localIsoDate += LocalIsoStringDate.getOffset(date);
         }
         return localIsoDate;
     }
 
     private static getOffset(date: Date): string {
-        const sign = ToLocalIso.startsWithMinus(date.getTimezoneOffset()) ? '+' : '-';
+        const sign = LocalIsoStringDate.startsWithMinus(date.getTimezoneOffset()) ? '+' : '-';
         const hours = parseInt((date.getTimezoneOffset() / 60).toFixed(0), 10);
         const mins = (date.getTimezoneOffset() % 60);
-        return `${sign}${ToLocalIso.pad(hours)}:${ToLocalIso.pad(mins)}`;
+        return `${sign}${LocalIsoStringDate.pad(hours)}:${LocalIsoStringDate.pad(mins)}`;
     }
 
     private static startsWithMinus(num: number): boolean {

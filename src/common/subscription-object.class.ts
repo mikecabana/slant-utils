@@ -1,28 +1,33 @@
 import { Subscription } from 'rxjs';
 
-export class SubscriptionCollection {
+export class SubscriptionObject {
 
     /**
      * Holds all the subscriptions.
      *
      * @private
      * @type {{ [key: string]: Subscription }}
-     * @memberof SubscriptionCollection
+     * @memberof SubscriptionObject
      */
     private subscriptions: { [key: string]: Subscription };
 
+    /**
+     * Creates an instance of SubscriptionObject.
+     * @memberof SubscriptionObject
+     */
     constructor() {
         this.subscriptions = {};
     }
 
     /**
-     * Adds a new subscription to the `subscriptions` object of the `SubscriptionsCollection`.
+     * Adds a new subscription to the `subscriptions` object of the `SubscriptionObject`.
+     * The key must be unique.
      *
      * @param {string} key
      * @param {Subscription} subscription
-     * @memberof SubscriptionCollection
+     * @memberof SubscriptionObject
      */
-    public add(key: string, subscription: Subscription): void {
+    public register(key: string, subscription: Subscription): void {
         if (this.isKeyUnique(key)) {
             this.subscriptions[key] = subscription;
         } else {
@@ -32,9 +37,10 @@ export class SubscriptionCollection {
 
     /**
      * Unsubscribes from one or all subscriptions in the `subscriptions` object.
+     * Omitting an argument will unsubscribe from all;
      *
      * @param {string} [key]
-     * @memberof SubscriptionCollection
+     * @memberof SubscriptionObject
      */
     public unsubscribe(key?: string): void {
         if (key) {
@@ -52,7 +58,7 @@ export class SubscriptionCollection {
      * @private
      * @param {string} key
      * @returns {boolean}
-     * @memberof SubscriptionCollection
+     * @memberof SubscriptionObject
      */
     private isKeyUnique(key: string): boolean {
         return !Object.keys(this.subscriptions).includes(key);
