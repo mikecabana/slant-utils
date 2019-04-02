@@ -1,4 +1,4 @@
 export interface IPagination {
-    index: number;
-    size: number;
+  index: number;
+  size: number;
 }
